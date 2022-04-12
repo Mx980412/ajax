@@ -25,10 +25,13 @@ getJSON.onclick = () => {
     if (request.readyState === 4 && request.status === 200) {
       const object = JSON.parse(request.response);
       myName.textContent = object.name;
+      //异步（下载完成就调用）
       console.log(object);
     }
   };
   request.send();
+  //一开始拿不到结果;
+  console.log(request.response);
 };
 
 //加载XML
